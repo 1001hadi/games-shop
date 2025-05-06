@@ -6,35 +6,25 @@
 
 - Users:
 
-  -name
-
-  -email
-
-  -pwd
-
-  -admin
+  - name
+  - email
+  - pwd
+  - admin
 
 - Games:
 
-  -name
-
-  -category
-
-  -price
-
-  -numOfPlayer
-
-  -desc
-
-  -qty
+  - name
+  - category
+  - price
+  - numOfPlayer
+  - desc
+  - qty
 
 - Cart:
 
-  -items
-
-  -totalPrice
-
-  -userID
+  - items
+  - totalPrice
+  - userID
 
 ## Routes
 
@@ -44,11 +34,11 @@
 
 - GamesRoutes:
 
-  -get all
-  -get specific
-  -update by admin
-  -delete by admin
+  - get all
+  - get specific
+  - update by admin
+  - delete by admin
 
 - cartRoutes:
 
-  -items
+  - items
