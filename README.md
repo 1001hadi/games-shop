@@ -4,36 +4,51 @@
 
 ## Schemas:
 
-- Users: 
+- Users:
+
   -name
+
   -email
+
   -pwd
+
   -admin
 
-- Games: 
+- Games:
+
   -name
+
   -category
+
   -price
+
   -numOfPlayer
+
   -desc
+
   -qty
 
-- Cart: 
+- Cart:
+
   -items
+
   -totalPrice
+
   -userID
 
 ## Routes
 
-- usersRoutes: 
+- usersRoutes:
 
   - CRUD User
 
-- GamesRoutes: 
+- GamesRoutes:
+
   -get all
   -get specific
   -update by admin
   -delete by admin
 
-- cartRoutes: 
+- cartRoutes:
+
   -items
