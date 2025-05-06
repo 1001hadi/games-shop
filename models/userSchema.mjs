@@ -16,6 +16,13 @@ const userSchema = new mongoose.Schema({
     minLength: [3, "Last name can't be less than 3 characters long"],
     maxLength: [20, "Last name can't be more than 20 characters long"],
   },
+  username: {
+    type: String,
+    required: [true, "Please provide your last username"],
+    trim: true,
+    minLength: [3, "Username can't be less than 3 characters long"],
+    maxLength: [20, "Username can't be more than 20 characters long"],
+  },
   age: {
     type: Number,
     min: [13, "Must be over 13 to purchases!"],
@@ -31,10 +38,10 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please provide your email address"],
     trim: true,
     unique: true,
-    match: [
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      "Email address must be valid !",
-    ],
+    // match: [
+    //   /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    //   "Email address must be valid !",
+    // ],
     // to create index with mongoose
     index: true,
   },
@@ -43,32 +50,19 @@ const userSchema = new mongoose.Schema({
     required: true,
     minLength: 8,
     maxLength: 123,
-//     pattern:
-//       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,128}$",
-//     examples: ["P@$$wOrd123", "SecurePassword!", "MyPa$$wOrd"],
-//   },
-  isAdmin: {
-    type: Boolean,
-    default: false,
-    // properties: {
-    //   username: {
-    //     type: String,
-    //     minLength: 3,
-    //     maxLength: 30,
-    //     description: "Administrator username.",
+    //     pattern:
+    //       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,128}$",
+    //     examples: ["P@$$wOrd123", "SecurePassword!", "MyPa$$wOrd"],
     //   },
-    //   password: {
-    //     type: String,
-    //     minLength: 8,
-    //     maxLength: 30,
-    //     description: "Administrator password.",
-    //   },
-    // },
-  },
-  cart: { type: mongoose.Schema.Types.ObjectId, ref: "Cart" },
-  registrationDate: {
-    type: Date,
-    default: Date.now,
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    cart: { type: mongoose.Schema.Types.ObjectId, ref: "Cart" },
+    registrationDate: {
+      type: Date,
+      default: Date.now,
+    },
   },
 });
 
